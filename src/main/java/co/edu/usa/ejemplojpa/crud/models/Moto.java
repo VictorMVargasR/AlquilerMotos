@@ -53,13 +53,11 @@ public class Moto implements Serializable{
     public List<Message> messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "motorbike")
-    public List<Reservation> reservations;
-
-   
-
-
+    public List<Reservation> reservations; 
     
-
+    
+    
+    
     
     
 }
