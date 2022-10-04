@@ -4,38 +4,44 @@
  */
 package co.edu.usa.ejemplojpa.crud.models;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-        
 
 
 /**
  *
  * @author USER2022
  */
+
 @Getter
 @Setter
 @Entity
-@Table(name="message")
-public class Message implements Serializable{
+@Table(name="reservation")
+public class Reservation implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMessage;
-   
-    @Column(name="messageText", length = 255, nullable = false, unique = false)
-    private String messageText;
-     
+    private Integer idReservation;
+    
+    @Column(name="starDate", nullable = false, unique = false)
+    private Date starDate;
+    
+    @Column(name="devolutionDate", nullable = false, unique = false)
+    private Date devolutionDate;
+    
+    @Column(name="status", nullable = false, unique = false)
+    private Integer status;
+    
     @ManyToOne
-    @JsonIgnoreProperties("messages")
-    //(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("reservations")
     @JoinColumn(name="motorbike")
     private Moto motorbike;
     
-    
-    
+   
     
 }
