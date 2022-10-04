@@ -31,7 +31,6 @@ public class Message implements Serializable{
      
     @ManyToOne
     @JsonIgnoreProperties("messages")
-    //(fetch = FetchType.LAZY)
     @JoinColumn(name="motorbike")
     private Moto motorbike;
     
