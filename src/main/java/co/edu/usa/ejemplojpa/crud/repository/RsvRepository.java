@@ -4,7 +4,7 @@
  */
 package co.edu.usa.ejemplojpa.crud.repository;
 
-import co.edu.usa.ejemplojpa.crud.models.Category;
+import co.edu.usa.ejemplojpa.crud.models.Reservation;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +12,18 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author User2022
+ * @author Reservation
  */
 @Repository
-public class CtgRepository
+public class RsvRepository
 {
     @Autowired
-    private CategoryRepository catr;
-    
-    public List<Category>  getAll(){
-    return (List<Category>) catr.findAll();
+    private ReservationCrudRepository rsv;
+    public List<Reservation> getAll(){
+    return (List<Reservation>)rsv.findAll();
     }
-    public Optional<Category> getCategory(int id){
-    return catr.findById(id);}
-    public Category save(Category c){
-    return catr.save(c);}
+    public Optional<Reservation> getReservation(int id){
+    return rsv.findById(id);}
+    public Reservation save(Reservation m){
+    return rsv.save(m);}
 }
-
-    
-

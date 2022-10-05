@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package co.edu.usa.ejemplojpa.crud.repository;
-
-import co.edu.usa.ejemplojpa.crud.models.Category;
+import co.edu.usa.ejemplojpa.crud.models.Client;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Repository;
  * @author Victor
  */
 @Repository
-public interface CategoryRepository extends CrudRepository<Category, Integer>
+public interface ClientCrudRepository extends CrudRepository<Client, Integer>
 {
     
 }

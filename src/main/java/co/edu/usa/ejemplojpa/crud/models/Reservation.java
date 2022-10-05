@@ -7,8 +7,6 @@ package co.edu.usa.ejemplojpa.crud.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
 import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,19 +27,25 @@ public class Reservation implements Serializable{
     private Integer idReservation;
     
     @Column(name="starDate", nullable = false, unique = false)
-    private Date starDate;
+    private Date startDate;
     
     @Column(name="devolutionDate", nullable = false, unique = false)
     private Date devolutionDate;
     
     @Column(name="status", nullable = false, unique = false)
-    private Integer status;
+    private String status;
     
     @ManyToOne
     @JsonIgnoreProperties("reservations")
     @JoinColumn(name="motorbike")
     private Moto motorbike;
     
-   
+    @ManyToOne
+    @JsonIgnoreProperties({"reservations","messages"})
+    @JoinColumn(name="client")
+    private Client client;
+    
+   @Column(name="score", nullable = true, unique = false)
+    private Integer score;
     
 }

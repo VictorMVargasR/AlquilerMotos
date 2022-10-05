@@ -30,12 +30,15 @@ public class Message implements Serializable{
     private String messageText;
      
     @ManyToOne
-    @JsonIgnoreProperties("messages")
-    //(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"messages","reservations"})
     @JoinColumn(name="motorbike")
     private Moto motorbike;
     
     
+    @ManyToOne
+    @JsonIgnoreProperties({"messages","reservations"})
+    @JoinColumn(name="client")
+    private Client client;
     
     
 }

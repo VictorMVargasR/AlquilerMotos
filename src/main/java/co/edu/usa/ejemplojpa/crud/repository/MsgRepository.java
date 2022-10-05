@@ -4,30 +4,29 @@
  */
 package co.edu.usa.ejemplojpa.crud.repository;
 
-import co.edu.usa.ejemplojpa.crud.models.Category;
+import co.edu.usa.ejemplojpa.crud.models.Message;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author User2022
+ * @author Victor
  */
 @Repository
-public class CtgRepository
+public class MsgRepository
 {
     @Autowired
-    private CategoryRepository catr;
+    private MessageCrudRep msgr;
     
-    public List<Category>  getAll(){
-    return (List<Category>) catr.findAll();
-    }
-    public Optional<Category> getCategory(int id){
-    return catr.findById(id);}
-    public Category save(Category c){
-    return catr.save(c);}
+    public List<Message> getAll(){
+    return (List<Message>)msgr.findAll();}
+    
+    public Optional<Message> getMessage(int id){
+    return msgr.findById(id);}
+    
+    public Message save(Message m){
+    return msgr.save(m);}
 }
-
-    
-

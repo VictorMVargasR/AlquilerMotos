@@ -4,7 +4,7 @@
  */
 package co.edu.usa.ejemplojpa.crud.repository;
 
-import co.edu.usa.ejemplojpa.crud.models.Category;
+import co.edu.usa.ejemplojpa.crud.models.Client;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +15,18 @@ import org.springframework.stereotype.Repository;
  * @author User2022
  */
 @Repository
-public class CtgRepository
+public class CltRepository
 {
     @Autowired
-    private CategoryRepository catr;
+    private ClientCrudRepository cltr;
     
-    public List<Category>  getAll(){
-    return (List<Category>) catr.findAll();
+    public List<Client>  getAll(){
+    return (List<Client>) cltr.findAll();
     }
-    public Optional<Category> getCategory(int id){
-    return catr.findById(id);}
-    public Category save(Category c){
-    return catr.save(c);}
+    public Optional<Client> getClient(int id){
+    return cltr.findById(id);}
+    public Client save(Client c){
+    return cltr.save(c);}
 }
 
     
