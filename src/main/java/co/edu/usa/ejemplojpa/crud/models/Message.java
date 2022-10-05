@@ -12,7 +12,6 @@ import javax.persistence.*;
  *
  * @author USER2022
  */
-
 @Entity
 @Table(name = "message")
 public class Message implements Serializable {
@@ -104,5 +103,4 @@ public class Message implements Serializable {
         this.client = client;
     }
 
-    
 }
