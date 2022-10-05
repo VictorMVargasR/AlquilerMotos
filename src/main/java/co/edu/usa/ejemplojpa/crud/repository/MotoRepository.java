@@ -4,7 +4,7 @@
  */
 package co.edu.usa.ejemplojpa.crud.repository;
 
-import co.edu.usa.ejemplojpa.crud.models.Moto;
+import co.edu.usa.ejemplojpa.crud.models.Motorbike;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author Moto
  */
 @Repository
-public interface MotoRepository extends CrudRepository<Moto, Integer>
+public interface MotoRepository extends CrudRepository<Motorbike, Integer>
 {
     
 }

@@ -4,7 +4,7 @@
  */
 package co.edu.usa.ejemplojpa.crud.controller;
 
-import co.edu.usa.ejemplojpa.crud.models.Moto;
+import co.edu.usa.ejemplojpa.crud.models.Motorbike;
 import co.edu.usa.ejemplojpa.crud.services.MotoService;
 import java.util.List;
 import java.util.Optional;
@@ -33,18 +33,18 @@ public class MotoController {
     private MotoService ms;
     
     @GetMapping("all")
-    public List<Moto> getAll(){
+    public List<Motorbike> getAll(){
         return ms.getAll();
     }
     @GetMapping("{id}")
- public Optional<Moto> getMoto(@PathVariable("id")int id) {
+ public Optional<Motorbike> getMoto(@PathVariable("id")int id) {
         return ms.getMoto(id);
     }
  
 @PostMapping("save")
 @ResponseStatus(HttpStatus.CREATED)
 
-public Moto save(@RequestBody Moto m){
+public Motorbike save(@RequestBody Motorbike m){
     return ms.save(m);
 }
 }

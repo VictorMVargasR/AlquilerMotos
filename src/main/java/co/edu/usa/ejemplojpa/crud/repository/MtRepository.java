@@ -4,7 +4,7 @@
  */
 package co.edu.usa.ejemplojpa.crud.repository;
 
-import co.edu.usa.ejemplojpa.crud.models.Moto;
+import co.edu.usa.ejemplojpa.crud.models.Motorbike;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,11 @@ public class MtRepository
 {
     @Autowired
     private MotoRepository mtr;
-    public List<Moto> getAll(){
-    return (List<Moto>)mtr.findAll();
+    public List<Motorbike> getAll(){
+    return (List<Motorbike>)mtr.findAll();
     }
-    public Optional<Moto> getMoto(int id){
+    public Optional<Motorbike> getMoto(int id){
     return mtr.findById(id);}
-    public Moto save(Moto m){
+    public Motorbike save(Motorbike m){
     return mtr.save(m);}
 }

@@ -4,7 +4,7 @@
  */
 package co.edu.usa.ejemplojpa.crud.services;
 
-import co.edu.usa.ejemplojpa.crud.models.Moto;
+import co.edu.usa.ejemplojpa.crud.models.Motorbike;
 import co.edu.usa.ejemplojpa.crud.repository.MotoRepository;
 import co.edu.usa.ejemplojpa.crud.repository.MtRepository;
 import java.util.List;
@@ -24,18 +24,18 @@ public class MotoService {
     @Autowired
     private MtRepository mr;
     
-    public List<Moto> getAll(){
-        return (List<Moto>)mr.getAll();
+    public List<Motorbike> getAll(){
+        return (List<Motorbike>)mr.getAll();
     }
-   public Optional<Moto> getMoto(int id){
+   public Optional<Motorbike> getMoto(int id){
    return  mr.getMoto(id);
    }
    
-   public Moto save(Moto m){
+   public Motorbike save(Motorbike m){
    if(m.getId()==null){
    return mr.save(m);
    }else{
-       Optional<Moto> e=mr.getMoto(m.getId());
+       Optional<Motorbike> e=mr.getMoto(m.getId());
    if(e.isPresent()){return m;
    }else{
        return mr.save(m);}
