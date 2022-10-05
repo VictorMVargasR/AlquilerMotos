@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @author Victor
  */
 @Service
-public class MotoService {
+public class MotorbikeService {
     
     
     @Autowired

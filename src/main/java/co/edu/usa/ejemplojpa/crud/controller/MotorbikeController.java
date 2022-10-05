@@ -5,7 +5,7 @@
 package co.edu.usa.ejemplojpa.crud.controller;
 
 import co.edu.usa.ejemplojpa.crud.models.Motorbike;
-import co.edu.usa.ejemplojpa.crud.services.MotoService;
+import co.edu.usa.ejemplojpa.crud.services.MotorbikeService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +27,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins="*", methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RequestMapping("api/Motorbike")
-public class MotoController {
+public class MotorbikeController {
     
     @Autowired
-    private MotoService ms;
+    private MotorbikeService ms;
     
     @GetMapping("all")
     public List<Motorbike> getAll(){
