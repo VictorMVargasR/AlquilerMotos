@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
 public class MsgRepository
 {
     @Autowired
-    private MessageCrudRep msgr;
+    private MessageCrudRepository msgr;
     
     public List<Message> getAll(){
     return (List<Message>)msgr.findAll();}

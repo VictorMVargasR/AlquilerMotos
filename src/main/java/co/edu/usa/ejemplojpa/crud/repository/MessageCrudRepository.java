@@ -3,17 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package co.edu.usa.ejemplojpa.crud.repository;
-
 import co.edu.usa.ejemplojpa.crud.models.Message;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Moto
+ * @author Victor
  */
 @Repository
-public interface MessagecrudRep extends CrudRepository<Message, Integer>
+public interface MessageCrudRepository extends CrudRepository<Message, Integer>
 {
     
 }
