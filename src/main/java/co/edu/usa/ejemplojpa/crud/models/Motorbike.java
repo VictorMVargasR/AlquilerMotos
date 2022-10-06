@@ -21,21 +21,21 @@ public class Motorbike implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", length = 255, nullable = false, unique = false)
+    @Column(name = "name", length = 45, nullable = false, unique = false)
     private String name;
 
-    @Column(name = "brand", length = 255, nullable = false, unique = false)
+    @Column(name = "brand", length = 45, nullable = false, unique = false)
     private String brand;
 
-    @Column(name = "'year'", nullable = false, unique = false)
+    @Column(name = "year", length = 4, nullable = false, unique = false)
     private Integer year;
 
-    @Column(name = "description", length = 255, nullable = false, unique = false)
+    @Column(name = "description", length = 250, nullable = false, unique = false)
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("listaMotos")
+    @JoinColumn(name = "category")
+    @JsonIgnoreProperties("motorbikes")
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "motorbike")

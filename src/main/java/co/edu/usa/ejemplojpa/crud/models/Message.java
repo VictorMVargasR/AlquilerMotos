@@ -20,17 +20,17 @@ public class Message implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
 
-    @Column(name = "messageText", length = 255, nullable = false, unique = false)
+    @Column(name = "messageText", length = 250, nullable = false, unique = false)
     private String messageText;
 
     @ManyToOne
-    @JoinColumn(name = "motorbikeId")
-    @JsonIgnoreProperties("listaMessage")
+    @JoinColumn(name = "motorbike")
+    @JsonIgnoreProperties("messages")
     private Motorbike motorbike;
 
     @ManyToOne
-    @JoinColumn(name = "messageId")
-    @JsonIgnoreProperties("listaMessage")
+    @JoinColumn(name = "message")
+    @JsonIgnoreProperties("messages")
     private Client client;
 
     public Message() {

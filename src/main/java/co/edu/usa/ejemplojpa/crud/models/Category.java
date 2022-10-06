@@ -21,10 +21,10 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", length = 255, nullable = false, unique = false)
+    @Column(name = "name", length = 45, nullable = false, unique = false)
     private String name;
 
-    @Column(name = "description", length = 255, nullable = false, unique = false)
+    @Column(name = "description", length = 250, nullable = false, unique = false)
     private String description;
 
     //@JoinColumn(name="category")

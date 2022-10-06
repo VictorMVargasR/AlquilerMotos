@@ -29,16 +29,16 @@ public class Client implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
 
-    @Column(name = "email", length = 255, nullable = false, unique = false)
+    @Column(name = "email", length = 45, nullable = false, unique = false)
     private String email;
 
-    @Column(name = "password", length = 255, nullable = false, unique = false)
+    @Column(name = "password", length = 45, nullable = false, unique = false)
     private String password;
 
-    @Column(name = "name", length = 255, nullable = false, unique = false)
+    @Column(name = "name", length = 250, nullable = false, unique = false)
     private String name;
 
-    @Column(name = "age", length = 255, nullable = false, unique = false)
+    @Column(name = "age", length = 100, nullable = false, unique = false)
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")

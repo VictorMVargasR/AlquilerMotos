@@ -9,6 +9,7 @@ import co.edu.usa.ejemplojpa.crud.services.MotorbikeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +30,7 @@ public class MotorbikeController {
         return motorbikeService.getAll();
     }
 
-    @GetMapping("/save")
+    @PostMapping("/save")
     public Motorbike save(@RequestBody Motorbike c) {
         return motorbikeService.save(c);
     }

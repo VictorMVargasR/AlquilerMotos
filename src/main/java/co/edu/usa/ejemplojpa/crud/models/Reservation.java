@@ -34,20 +34,20 @@ public class Reservation implements Serializable {
     @Column(name = "devolutionDate", length = 255, nullable = false, unique = false)
     private String devolutionDate;
 
-    @Column(name = "status", length = 255, nullable = false, unique = false)
+    @Column(name = "status", length = 255, nullable = true, unique = false)
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "motorbikeId")
-    @JsonIgnoreProperties("listaReservation")
+    @JoinColumn(name = "motorbike")
+    @JsonIgnoreProperties("reservations")
     private Motorbike motorbike;
 
     @ManyToOne
-    @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties("listaReservation")
+    @JoinColumn(name = "client")
+    @JsonIgnoreProperties("reservations")
     private Client client;
 
-    @Column(name = "score", length = 255, nullable = false, unique = false)
+    @Column(name = "score", length = 255, nullable = true, unique = false)
     private Integer score;
 
     public Reservation() {
