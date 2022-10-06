@@ -4,8 +4,8 @@
  */
 package co.edu.usa.ejemplojpa.crud.controller;
 
-import co.edu.usa.ejemplojpa.crud.models.Category;
-import co.edu.usa.ejemplojpa.crud.services.CategoryService;
+import co.edu.usa.ejemplojpa.crud.models.Message;
+import co.edu.usa.ejemplojpa.crud.services.MessageService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,21 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Victor
  */
-
 @RestController
-@RequestMapping("api/Category")
-public class CategoryController {
+@RequestMapping("api/Message")
+public class MessageController {
 
     @Autowired
-    private CategoryService categoryService;
+    private MessageService messageService;
 
     @GetMapping("/all")
-    public List<Category> getAll() {
-        return categoryService.getAll();
+    public List<Message> getAll() {
+        return messageService.getAll();
     }
 
     @GetMapping("/save")
-    public Category save(@RequestBody Category c) {
-        return categoryService.save(c);
+    public Message save(@RequestBody Message c) {
+        return messageService.save(c);
     }
 }

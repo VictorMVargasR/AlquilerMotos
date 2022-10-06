@@ -4,8 +4,8 @@
  */
 package co.edu.usa.ejemplojpa.crud.controller;
 
-import co.edu.usa.ejemplojpa.crud.models.Category;
-import co.edu.usa.ejemplojpa.crud.services.CategoryService;
+import co.edu.usa.ejemplojpa.crud.models.Reservation;
+import co.edu.usa.ejemplojpa.crud.services.ReservationService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,21 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Victor
  */
-
 @RestController
-@RequestMapping("api/Category")
-public class CategoryController {
+@RequestMapping("api/Reservation")
+public class ReservationController {
 
     @Autowired
-    private CategoryService categoryService;
+    private ReservationService motorbikeService;
 
     @GetMapping("/all")
-    public List<Category> getAll() {
-        return categoryService.getAll();
+    public List<Reservation> getAll() {
+        return motorbikeService.getAll();
     }
 
     @GetMapping("/save")
-    public Category save(@RequestBody Category c) {
-        return categoryService.save(c);
+    public Reservation save(@RequestBody Reservation c) {
+        return motorbikeService.save(c);
     }
 }
