@@ -6,6 +6,7 @@ package co.edu.usa.ejemplojpa.crud.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,13 +29,15 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
 
-    @Column(name = "startDate", length = 255, nullable = false, unique = false)
-    private String startDate;
+    @Column(name = "startDate", nullable = false, unique = false)
+    //@Temporal(javax.persistence.TemporalType.DATE)
+    private Date startDate;
 
-    @Column(name = "devolutionDate", length = 255, nullable = false, unique = false)
-    private String devolutionDate;
+    @Column(name = "devolutionDate", nullable = false, unique = false)
+    //@Temporal(javax.persistence.TemporalType.DATE)
+    private Date devolutionDate;
 
-    @Column(name = "status", length = 255, nullable = true, unique = false)
+    @Column(name = "status", nullable = true, unique = false)
     private String status;
 
     @ManyToOne
@@ -44,7 +47,7 @@ public class Reservation implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "client")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
     @Column(name = "score", length = 255, nullable = true, unique = false)
@@ -57,7 +60,7 @@ public class Reservation implements Serializable {
         this.idReservation = idReservation;
     }
 
-    public Reservation(Integer idReservation, String startDate, String devolutionDate, String status, Motorbike motorbike, Client client, Integer score) {
+    public Reservation(Integer idReservation, Date startDate, Date devolutionDate, String status, Motorbike motorbike, Client client, Integer score) {
         this.idReservation = idReservation;
         this.startDate = startDate;
         this.devolutionDate = devolutionDate;
@@ -67,7 +70,6 @@ public class Reservation implements Serializable {
         this.score = score;
     }
 
-    
     /**
      * @return the idReservation
      */
@@ -85,28 +87,28 @@ public class Reservation implements Serializable {
     /**
      * @return the startDate
      */
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
     /**
      * @param startDate the startDate to set
      */
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
     /**
      * @return the devolutionDate
      */
-    public String getDevolutionDate() {
+    public Date getDevolutionDate() {
         return devolutionDate;
     }
 
     /**
      * @param devolutionDate the devolutionDate to set
      */
-    public void setDevolutionDate(String devolutionDate) {
+    public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
 

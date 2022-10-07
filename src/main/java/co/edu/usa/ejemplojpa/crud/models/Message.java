@@ -25,12 +25,12 @@ public class Message implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "motorbike")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Motorbike motorbike;
 
     @ManyToOne
     @JoinColumn(name = "message")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
     public Message() {
