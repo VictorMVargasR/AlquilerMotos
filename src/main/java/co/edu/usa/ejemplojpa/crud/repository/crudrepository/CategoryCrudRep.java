@@ -2,19 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package co.edu.usa.ejemplojpa.crud.repository;
+package co.edu.usa.ejemplojpa.crud.repository.crudrepository;
 
-import co.edu.usa.ejemplojpa.crud.models.Moto;
-import org.springframework.data.jpa.repository.JpaRepository;
+import co.edu.usa.ejemplojpa.crud.models.Category;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Moto
  */
-@Repository
-public interface MotoRepository extends CrudRepository<Moto, Integer>
+
+public interface CategoryCrudRep extends CrudRepository<Category, Integer>
 {
     
 }

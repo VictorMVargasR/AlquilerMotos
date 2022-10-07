@@ -2,18 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package co.edu.usa.ejemplojpa.crud.repository;
+package co.edu.usa.ejemplojpa.crud.repository.crudrepository;
 
-import co.edu.usa.ejemplojpa.crud.models.Reservation;
+import co.edu.usa.ejemplojpa.crud.models.Client;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Victor
+ * @author Moto
  */
-@Repository
-public interface ReservationCrudRepository extends CrudRepository<Reservation, Integer>
+
+public interface ClientCrudRep extends CrudRepository<Client, Integer>
 {
     
 }
