@@ -15,7 +15,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "category")
-public class Category implements Serializable {
+public class Score implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,14 +32,14 @@ public class Category implements Serializable {
     @JsonIgnoreProperties("category")
     private List<Motorbike> motorbikes;
 
-    public Category() {
+    public Score() {
     }
 
-    public Category(Integer id) {
+    public Score(Integer id) {
         this.id = id;
     }
 
-    public Category(Integer id, String name, String description, List<Motorbike> motorbikes) {
+    public Score(Integer id, String name, String description, List<Motorbike> motorbikes) {
         this.id = id;
         this.name = name;
         this.description = description;
