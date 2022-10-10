@@ -6,6 +6,7 @@ package co.edu.usa.ejemplojpa.crud.repository;
 
 import co.edu.usa.ejemplojpa.crud.models.Reservation;
 import co.edu.usa.ejemplojpa.crud.repository.crudrepository.ReservationCrudRep;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,9 @@ public class ReservationRepository {
 
     public void delete(Reservation m) {
         reservationCrudRep.delete(m);
+    }
+    
+    public List<Reservation> getReservationPeriod(Date a, Date b){
+        return reservationCrudRep.findAllByStartDateAfterAndStartDateBefore(a,b);
     }
 }
