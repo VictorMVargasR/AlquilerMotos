@@ -49,7 +49,7 @@ public class ReservationService {
 
     public Reservation save(Reservation c) {
         if (c.getIdReservation() == null) {
-            c.setStatus("created");
+          //  c.setStatus("created");
             return resRep.save(c);
         } else {
             Optional<Reservation> caux = resRep.getReservation(c.getIdReservation());
