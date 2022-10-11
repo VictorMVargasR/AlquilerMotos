@@ -5,6 +5,8 @@
 package co.edu.usa.ejemplojpa.crud.services;
 
 import co.edu.usa.ejemplojpa.crud.models.Reservation;
+import co.edu.usa.ejemplojpa.crud.models.custom.CountClient;
+import co.edu.usa.ejemplojpa.crud.models.custom.StatusAmount;
 import co.edu.usa.ejemplojpa.crud.repository.ReservationRepository;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -27,6 +29,18 @@ public class ReservationService {
 
     public List<Reservation> getAll() {
         return (List<Reservation>) resRep.getAll();
+    }
+    
+     public List<CountClient> getTopClient(){
+        return resRep.getTopClient();
+    }
+    
+    public StatusAmount getStatusReport(){
+        List<Reservation> completed=resRep.getReservationsByStatus("completed");
+        List<Reservation> cancelled=resRep.getReservationsByStatus("cancelled");
+        
+        StatusAmount statAmt=new StatusAmount(completed.size(), cancelled.size());
+        return statAmt;
     }
 
     public Optional<Reservation> getReservation(int id) {
