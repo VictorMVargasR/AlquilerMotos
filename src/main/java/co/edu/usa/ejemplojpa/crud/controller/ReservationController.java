@@ -5,6 +5,8 @@
 package co.edu.usa.ejemplojpa.crud.controller;
 
 import co.edu.usa.ejemplojpa.crud.models.Reservation;
+import co.edu.usa.ejemplojpa.crud.models.custom.CountClient;
+import co.edu.usa.ejemplojpa.crud.models.custom.StatusAmount;
 import co.edu.usa.ejemplojpa.crud.services.ReservationService;
 import java.util.List;
 import java.util.Optional;
@@ -64,5 +66,15 @@ public class ReservationController {
             @PathVariable("date-one") String dateOne,
             @PathVariable("date-two") String dateTwo){
         return reservationService.getReservationPeriod(dateOne,dateTwo);
+    }
+    
+    @GetMapping("/report-status")
+    public StatusAmount getStatusAmountStatus(){
+        return reservationService.getStatusReport();
+    }
+    
+    @GetMapping("/report-clients")
+    public List<CountClient> getCountClients(){
+        return reservationService.getTopClient();
     }
 }
