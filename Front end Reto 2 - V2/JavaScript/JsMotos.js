@@ -1,7 +1,7 @@
 function traerinfoMot() {
 
     $.ajax({
-        url: "https://g354fb2540e18d2-proyecto11prueba.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/moto/moto",
+        url: "localhost:8081/api/Motorbike/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta) {
@@ -40,7 +40,7 @@ function BorrarElementoMot(idElemento) {
     };
     let dataTosent = JSON.stringify(myData);
     $.ajax({
-        url: "https://g354fb2540e18d2-proyecto11prueba.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/moto/moto",
+        url: "localhost:8081/api/Motorbike/{id}",
         type: "DELETE",
         datatype: "JSON",
         data: dataTosent,
@@ -76,7 +76,7 @@ function creaMot() {
 
 
     $.ajax({
-        url: "https://g354fb2540e18d2-proyecto11prueba.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/moto/moto",
+        url: "localhost:8081/api/Motorbike/save",
         type: "POST",
         datatype: "JSON",
         data: dataTosent,
