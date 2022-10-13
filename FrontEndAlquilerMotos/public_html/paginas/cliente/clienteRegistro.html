@@ -64,54 +64,58 @@
 
 
             <section class="container-lg text-center" id="content">
-                <h1 class="m-0 pt-3 pb-3 fs-2 border-top border-3">
-                    Registro Cliente
-                </h1>
 
-                <p class="m-0 pt-3 pb-3 fs-4">
-                    <span class="text-secondary">Motorcycle rental </span>
-                    te invita a que realices tu registro en nuestro sistema. 
-                    Por favor llena todos los campos y envia el formulario
-                </p>
-                <br>
+                <div id="descrip">
+                    <h1 class="m-0 pt-3 pb-3 fs-2 border-top border-3">
+                        Registro Cliente
+                    </h1>
 
-                <form class="justify-content-center align-items-center w-75" id="form1" >
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label" >Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Juan Quevedo" autocomplete="off" maxlength="250" required tabindex="1">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="edad" class="form-label" >Edad</label>
-                        <input type="number" min="0" max="99" class="form-control" id="edad" placeholder="Juan Quevedo" autocomplete="off" maxlength="250" required tabindex="2">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email" class="form-label ">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" autocomplete="off" maxlength="45" required tabindex="3">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="cemail" class="form-label ">Confirmar correo electrónico</label>
-                        <input type="email" class="form-control" id="cemail" placeholder="nombre@ejemplo.com" autocomplete="off" maxlength="45" required tabindex="4">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="pass" class="form-label" >Contraseña</label>
-                        <input type="password" class="form-control" id="pass" placeholder="Juan Quevedo" autocomplete="off" maxlength="250" required tabindex="5">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="cpass" class="form-label" >Confirmar contraseña</label>
-                        <input type="password" class="form-control" id="cpass" placeholder="Juan Quevedo" autocomplete="off" maxlength="250" required tabindex="6">
-                    </div>
-
-                    <button class="btn btn-outline-success" type="submit" onclick="guardarClientes()">Registrarme</button>
-                </form>
+                    <p class="m-0 pt-3 pb-3 fs-4">
+                        <span class="text-secondary">Motorcycle rental </span>
+                        te invita a que realices tu registro en nuestro sistema. 
+                        Por favor llena todos los campos y envia el formulario
+                    </p>
+                </div>
 
                 <br>
-                <div id="ClienteContenido"> </div>
+
+                <div id="formulario">
+                    <form class="justify-content-center align-items-center w-25 mx-auto" id="formCliente" action="javascript:guardarClientes('formCliente')">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label" >Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Juan Quevedo" autocomplete="off" maxlength="250" required tabindex="1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="edad" class="form-label" >Edad</label>
+                            <input type="number" min="0" max="99" class="form-control" id="edad" placeholder="25" autocomplete="off" maxlength="250" required tabindex="2">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label ">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" autocomplete="off" maxlength="45" required tabindex="3">
+                        </div>
+
+                        <div class="mb-3" id="confirmemail" onclick="ocultarAlertaEmail()">
+                            <label for="cemail" class="form-label ">Confirmar correo electrónico</label>
+                            <input type="email" class="form-control" id="cemail" placeholder="nombre@ejemplo.com" autocomplete="off" maxlength="45" required tabindex="4">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pass" class="form-label" >Contraseña</label>
+                            <input type="password" class="form-control" id="pass" autocomplete="off" maxlength="250" required tabindex="5">
+                        </div>
+
+                        <div class="mb-3" id="confirmpassw" onclick="ocultarAlertaPass()">
+                            <label for="cpass" class="form-label" >Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="cpass" autocomplete="off" maxlength="250" required tabindex="6">
+                        </div>
+
+                        <button class="btn btn-outline-success" type="submit" tabindex="7">Registrarme</button>
+                    </form>
+                </div>
                 <br>
+
             </section> 
 
 
