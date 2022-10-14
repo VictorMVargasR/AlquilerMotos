@@ -68,7 +68,37 @@
                 <h1 class="m-0 pt-3 pb-3 fs-2 border-top border-3">
                     Pagina principal Admin
                 </h1>
-
+                <section>
+                    <div class="contact-wrapper" style="margin-top: 100px;" >
+                    <div class="contact-form">
+                        <h3>Administrador</h3>
+                        <form  id="formAdmin" name="formAdmin" action="javascript:mensaje('formAdmin')">
+                            <p>
+                                <label for="nameAdmin">Nombre:</label>
+                                <input type="text" name="nameAdmin" id="nameAdmin" required maxlength="45">
+                            </p>
+                            <p>
+                                <label for="email">Correo:</label>
+                                <input type="email" name="email" id="email" required maxlength="250">
+                            </p>
+                            <p>
+                                <label for="password">Contraseña:</label>
+                                <input type="password" name="password" id="password" required>
+                            </p>
+                            
+                        </form>
+                        <div class="block">
+                             <button type="submit" class="btn btn-info btn-lg btn-responsive" onclick="guardarElementoAdmin()"> <span class="glyphicon glyphicon-saved"></span>Agregar</button>                 
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Administradores</h3>
+                        <table class="table table-striped">
+                            <tbody id="resultadoAdmin"></tbody>
+                        </table>  
+                    </div>
+                    </div>
+                </section>
                 <p class="m-0 pt-3 pb-3 fs-4">
                     <span class="text-secondary">Motorcycle rental</span> es la agencia donde te ayudamos escoger la motocicleta ideal
                     para que puedas viajar, conocer lugares nuevos o pasear por la ciudad.
@@ -91,7 +121,7 @@
             </footer>
             
         </div>
-
+        
 
         <!--========================================================== -->
         <!-- Funciones -->

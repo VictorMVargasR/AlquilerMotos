@@ -27,8 +27,13 @@ public class Score implements Serializable {
     @Column(name = "stars", length = 45, nullable = false, unique = false)
     private Integer stars;
 
-    @OneToOne(cascade = {CascadeType.PERSIST}, mappedBy = "score")
-    @JsonIgnoreProperties("score")
+    //@OneToOne(cascade = {CascadeType.PERSIST}, mappedBy = "score")
+    //@JsonIgnoreProperties("score")
+    //private Reservation reservation;
+    
+     @OneToOne
+    @JoinColumn(name = "reservation")
+    @JsonIgnoreProperties({"score","messageText"})
     private Reservation reservation;
 
     public Score() {
