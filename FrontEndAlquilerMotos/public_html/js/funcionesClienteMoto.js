@@ -29,22 +29,31 @@ function pintarMotos(Motos) {
     $("#tablaBody").empty();
 
     let Table;
-
+    var process;
 
     for (i = 0; i < Motos.length; i++) {
         
-        console.log(Motos[i].category.valueOf());
+        process = true;
         
-        Table += "<tr>";
-        Table += "<td>" + Motos[i].name + "</td>";
-        Table += "<td>" + Motos[i].brand + "</td>";
-        Table += "<td>" + Motos[i].year + "</td>";
-        Table += "<td>" + Motos[i].description + "</td>";
-        Table += "<td>" + Motos[i].category.name + "</td>";
-        Table += "<td><a href='clienteReserva.html' class='btn btn-outline-success' type='button' onclick='guardarIdMoto(" + Motos[i].id + ")'>Reservar</a></td>";
-        Table += "</tr>";
+        for (var j = 0; j < Motos[i].reservations.length; j++) {
+            console.log(Motos[i].reservations[j].status);
+            if (Motos[i].reservations[j].status === "En proceso"){
+                process = false;
+                break;
+            }
+        }
         
-        
+        if (process) {
+            Table += "<tr>";
+            Table += "<td>" + Motos[i].name + "</td>";
+            Table += "<td>" + Motos[i].brand + "</td>";
+            Table += "<td>" + Motos[i].year + "</td>";
+            Table += "<td>" + Motos[i].description + "</td>";
+            Table += "<td>" + Motos[i].category.name + "</td>";
+            Table += "<td><a href='clienteReserva.html' class='btn btn-outline-success' type='button' onclick='guardarIdMoto(" + Motos[i].id + ")'>Reservar</a></td>";
+            Table += "</tr>";
+        }
+
     }
 
     $("#tablaBody").append(Table);
@@ -52,6 +61,6 @@ function pintarMotos(Motos) {
 }
 
 
-function guardarIdMoto(id){
+function guardarIdMoto(id) {
     localStorage.setItem("idMoto", id);
 }
