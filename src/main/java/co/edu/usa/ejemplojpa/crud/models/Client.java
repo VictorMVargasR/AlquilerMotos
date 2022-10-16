@@ -29,7 +29,7 @@ public class Client implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
 
-    @Column(name = "email", length = 45, nullable = false, unique = false)
+    @Column(name = "email", length = 45, nullable = false, unique = true)
     private String email;
 
     @Column(name = "password", length = 45, nullable = false, unique = false)
