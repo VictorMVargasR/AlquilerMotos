@@ -7,16 +7,17 @@
 //let isAdmin = false;
 //let isClient = false;
 //
-//$(document).ready(function () {
-//
-//    $.get("http://localhost:8080/api/user/user", function (data) {
+$(document).ready(function () {
+
+    $.get("api/user/user", function (data) {
 //        Username = data.name;
 //        validarAdmin();
 //        validarCliente();
 //        validarUsuario();
-//    });
-//
-//});
+        console.log(data.name);
+    });
+
+});
 //
 //
 //function validarUsuario() {
