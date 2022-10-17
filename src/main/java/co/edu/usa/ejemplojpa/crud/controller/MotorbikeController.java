@@ -27,8 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Victor
  */
 @RestController
+@CrossOrigin(origins={"*"}, methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RequestMapping("api/Motorbike")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class MotorbikeController {
 
     @Autowired

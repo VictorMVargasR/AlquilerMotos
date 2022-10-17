@@ -29,14 +29,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Victor
  */
 @RestController
+@CrossOrigin(origins={"*"}, methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RequestMapping("api/Reservation")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class ReservationController {
 
     @Autowired
     private ReservationService reservationService;
 
     @GetMapping("/all")
+    @ResponseStatus(HttpStatus.OK)
     public List<Reservation> getAll() {
         return reservationService.getAll();
     }
