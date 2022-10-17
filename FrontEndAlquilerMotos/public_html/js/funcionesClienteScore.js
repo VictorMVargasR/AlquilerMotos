@@ -23,6 +23,10 @@ $.ajax({
     }
 });
 
+$.get("http://localhost:8080/api/user/user", function (data) {
+    console.log(data.name);
+});
+
 function pintarReservas(Reserva) {
 
     $("#tablaBody").empty();
