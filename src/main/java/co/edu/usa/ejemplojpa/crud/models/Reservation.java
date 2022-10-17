@@ -52,13 +52,8 @@ public class Reservation implements Serializable {
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
-    // @OneToOne
-    //@JoinColumn(name = "score")
-    //@JsonIgnoreProperties({"reservation","messageText"})
-    //private Score score;
-     
-     @OneToOne(cascade = {CascadeType.PERSIST}, mappedBy = "reservation")
-    @JsonIgnoreProperties("reservation")
+    @OneToOne (cascade = {CascadeType.PERSIST}, mappedBy = "reservation")
+    @JsonIgnoreProperties({"reservation","messageText"})
     private Score score;
 
     public Reservation() {
